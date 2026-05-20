@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cviddxysd2ny3"]
+
+[ext_resource type="Script" uid="uid://n5gcv5kto165" path="res://game]/player/health.gd" id="1_ssnla"]
+[ext_resource type="Texture2D" uid="uid://d36fkfn0febps" path="res://icon.svg" id="2_ujqul"]
+
+[node name="Health" type="Node2D" unique_id=1355336080]
+script = ExtResource("1_ssnla")
+
+[node name="health 1" type="Sprite2D" parent="." unique_id=2049513430]
+position = Vector2(32, 32)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ujqul")
+
+[node name="health 2" type="Sprite2D" parent="." unique_id=1325304541]
+position = Vector2(32, 112)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ujqul")
+
+[node name="health 3" type="Sprite2D" parent="." unique_id=592197813]
+position = Vector2(32, 192)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ujqul")
