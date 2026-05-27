@@ -6,13 +6,18 @@ extends Node2D
 
 @export var chunk_folder_path: String = "res://game]/Chunks/"
 @export var render_distance : int = 8 # радиус прорисовки
+@export var start_speed : float = 50
 
 var available_chunks: Array[PackedScene] = []
 var last_chunk_y: float = 0
 var chunk_height: float = 10 # высота одного чанка
 
+var tile_size : int = 32
+var current_speed : float = start_speed
+
 func _ready():
 	load_all_chunks()
+	spike_wall.global_position.y = position.y - 8 * tile_size
 
 func _process(delta: float) -> void:
 	if is_instance_valid(player):
@@ -25,6 +30,12 @@ func _process(delta: float) -> void:
 				player.dir.y = 1
 				player.is_moving = false
 				player.moving(Vector2.DOWN)
+				
+	current_speed = start_speed + (float(player.score)/1000)
+	spike_wall.global_position.y += current_speed * delta
+	
+	if spike_wall.global_position.y < player.global_position.y - 11 * tile_size:
+		spike_wall.global_position.y = player.global_position.y - 10 * tile_size
 
 func load_all_chunks():
 	var dir = DirAccess.open(chunk_folder_path)

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://363h0cd3t8kb"]
+
+[ext_resource type="Script" uid="uid://d04vfswx12l1j" path="res://game]/ui/health.gd" id="1_yfuye"]
+[ext_resource type="Texture2D" uid="uid://cird735pliffq" path="res://сердечко (1).png" id="2_guqp5"]
+
+[node name="ui" type="CanvasLayer" unique_id=483647418]
+script = ExtResource("1_yfuye")
+
+[node name="Container" type="Control" parent="." unique_id=1265559999]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="heart1" type="Sprite2D" parent="Container" unique_id=1419905086]
+position = Vector2(75, 75)
+scale = Vector2(3, 3)
+texture = ExtResource("2_guqp5")
+
+[node name="heart2" type="Sprite2D" parent="Container" unique_id=643557506]
+position = Vector2(75, 175)
+scale = Vector2(3, 3)
+texture = ExtResource("2_guqp5")
+
+[node name="heart3" type="Sprite2D" parent="Container" unique_id=430576713]
+position = Vector2(75, 275)
+scale = Vector2(3, 3)
+texture = ExtResource("2_guqp5")

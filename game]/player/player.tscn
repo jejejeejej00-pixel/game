@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bqsb7g1crekut"]
 
 [ext_resource type="Script" uid="uid://b1jd06ixcfh1s" path="res://game]/player/player.gd" id="1_2jgu7"]
-[ext_resource type="Texture2D" uid="uid://d36fkfn0febps" path="res://icon.svg" id="1_ace27"]
+[ext_resource type="Texture2D" uid="uid://bq238x8ice735" path="res://лодка версия 1 (1).png" id="2_li3fw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jgu7"]
 size = Vector2(32, 32)
@@ -13,9 +13,7 @@ collision_mask = 65535
 script = ExtResource("1_2jgu7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1668945322]
-position = Vector2(16, 16)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_ace27")
+texture = ExtResource("2_li3fw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1484124856]
 position = Vector2(16, 16)

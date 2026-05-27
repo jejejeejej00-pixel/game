@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bro0ix8xjx6s"]
 
 [ext_resource type="Texture2D" uid="uid://d36fkfn0febps" path="res://icon.svg" id="1_qerwr"]
+[ext_resource type="Texture2D" uid="uid://hrb07bhk155q" path="res://шипы (1) (1).png" id="2_w07n4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wvpp6"]
 texture = ExtResource("1_qerwr")
@@ -43,32 +44,24 @@ texture_region_size = Vector2i(32, 32)
 3:3/0 = 0
 3:3/0/terrain_set = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lkd1e"]
-texture = ExtResource("1_qerwr")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bbafr"]
+texture = ExtResource("2_w07n4")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
-1:1/0/terrain_set = 0
-1:1/0/terrain = 1
-1:1/0/terrains_peering_bit/bottom_right_corner = 1
-1:1/0/terrains_peering_bit/bottom_left_corner = 1
-1:1/0/terrains_peering_bit/top_left_corner = 1
-1:1/0/terrains_peering_bit/top_right_corner = 1
-1:1/0/custom_data_0 = "Damage"
 2:1/0 = 0
 3:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_lkd1e"]
 tile_size = Vector2i(32, 32)
@@ -80,7 +73,7 @@ terrain_set_0/terrain_1/color = Color(0.8297586, 0, 0.19400042, 1)
 custom_data_layer_0/name = "damage_type"
 custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_wvpp6")
-sources/1 = SubResource("TileSetAtlasSource_lkd1e")
+sources/2 = SubResource("TileSetAtlasSource_bbafr")
 
 [node name="TileMapLayer" type="TileMapLayer" unique_id=1570857279]
 position = Vector2(0, -1)

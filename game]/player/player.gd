@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-@export var base_speed = 500.0
-@export var tile_size = 32
+@export var base_speed: float = 450.0
+@export var tile_size: int = 32
+
+var target_angle = PI/2
 
 var player_pos = Vector2(1, 0)
 var final_cell = Vector2()
@@ -11,7 +13,7 @@ var is_moving = false
 var is_invincible = false
 var health = 3
 
-var current_speed: float = 500.0
+var current_speed: float = base_speed
 var score: int = 0
 
 @onready var sprite = $Sprite2D
@@ -20,15 +22,25 @@ var score: int = 0
 func _ready() -> void:
 	position = player_pos * tile_size
 	final_cell = player_pos
+	print_score()
+
+func rotato():
+	if dir == Vector2.UP:
+		target_angle = -PI / 2
+	elif dir == Vector2.RIGHT:
+		target_angle = 0
+	elif dir == Vector2.DOWN:
+		target_angle = PI/2
+	else: target_angle = PI
 
 func moving(direction):
 	var next_cell = player_pos + direction
 	var tile_type = get_tile_type(next_cell)
 	
-	
 	if tile_type == "":
 		dir = direction
 		final_cell = next_cell
+		rotato()
 		is_moving = true
 	else:
 		if tile_type == "Damage":
@@ -43,11 +55,21 @@ func waiting_input():
 		moving(Vector2.DOWN)
 	elif Input.is_action_pressed("ui_right"):
 		moving(Vector2.RIGHT)
+		
+func print_score():
+	print(current_speed,' ', score)
+	await get_tree().create_timer(5).timeout
+	print_score()
 
 func _process(delta: float) -> void:
+	sprite.rotation = lerp_angle(sprite.rotation, target_angle, 20 * delta)
+	sprite.position = Vector2(16,16)
 	
 	score = round(player_pos[1])
-	current_speed = base_speed * (1 + float(score)/1000)
+	if base_speed * (1 + float(score)/2000) < 1000.0:
+		current_speed = base_speed * (1 + float(score)/2000.0)
+	else:
+		current_speed = 1000
 	
 	if is_moving:
 		position += dir * current_speed * delta
@@ -84,7 +106,8 @@ func get_tile_type(cell):
 func take_damage(amount):
 	if is_invincible or health <= 0: return
 	
-	health -= 0 #amount
+	health -= amount
+	print("Здоровье: ", health)
 	is_invincible = true
 	
 	sprite.modulate = Color.RED
@@ -95,3 +118,12 @@ func take_damage(amount):
 	await get_tree().create_timer(1.5).timeout
 	sprite.modulate.a = 1
 	is_invincible = false
+
+func heal(amount):
+	
+	health += amount
+	print("Здоровье: ", health)
+	
+	sprite.modulate = Color.GREEN
+	await get_tree().create_timer(0.15).timeout
+	sprite.modulate = Color.WHITE

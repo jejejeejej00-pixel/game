@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vv8wvyya86lv"]
 
-[ext_resource type="Script" uid="uid://uu0qmj0nb7ro" path="res://game]/camera with spikes/camera_on_death.gd" id="1_86nuj"]
+[ext_resource type="Script" uid="uid://uu0qmj0nb7ro" path="res://game]/camera/camera_on_death.gd" id="1_86nuj"]
 
 [node name="CameraOnDeath" type="Camera2D" unique_id=373022077]
 enabled = false
