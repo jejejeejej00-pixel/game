@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-@export var base_speed: float = 450.0
+@export var base_speed: float = 350.0
 @export var tile_size: int = 32
 
 var target_angle = PI/2
 
-var player_pos = Vector2(1, 0)
+var player_pos = Vector2(5, -30)
 var final_cell = Vector2()
 var dir = Vector2()
 
@@ -23,6 +23,7 @@ func _ready() -> void:
 	position = player_pos * tile_size
 	final_cell = player_pos
 	print_score()
+	
 
 func rotato():
 	if dir == Vector2.UP:
@@ -58,6 +59,7 @@ func waiting_input():
 		
 func print_score():
 	print(current_speed,' ', score)
+	print($"..".current_speed)
 	await get_tree().create_timer(5).timeout
 	print_score()
 
@@ -66,10 +68,10 @@ func _process(delta: float) -> void:
 	sprite.position = Vector2(16,16)
 	
 	score = round(player_pos[1])
-	if base_speed * (1 + float(score)/2000) < 1000.0:
-		current_speed = base_speed * (1 + float(score)/2000.0)
+	if base_speed * (1 + float(score)/100) < 700.0:
+		current_speed = base_speed * (1 + float(score)/100.0)
 	else:
-		current_speed = 1000
+		current_speed = 700.0
 	
 	if is_moving:
 		position += dir * current_speed * delta
@@ -107,7 +109,6 @@ func take_damage(amount):
 	if is_invincible or health <= 0: return
 	
 	health -= amount
-	print("Здоровье: ", health)
 	is_invincible = true
 	
 	sprite.modulate = Color.RED
@@ -122,7 +123,6 @@ func take_damage(amount):
 func heal(amount):
 	
 	health += amount
-	print("Здоровье: ", health)
 	
 	sprite.modulate = Color.GREEN
 	await get_tree().create_timer(0.15).timeout

@@ -11,13 +11,12 @@ config_version=5
 [application]
 
 config/name="333"
-run/main_scene="uid://v52poeso73vr"
+run/main_scene="uid://bwl0kxi5dcbve"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=900
 window/stretch/scale=1.44
 
 [physics]

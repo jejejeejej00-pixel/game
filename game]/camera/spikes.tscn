@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://bofa2yhbjp57h"]
 
-[ext_resource type="Texture2D" uid="uid://d36fkfn0febps" path="res://icon.svg" id="1_ko705"]
+[ext_resource type="Texture2D" uid="uid://dixayoo43gnxe" path="res://стена шипов.png" id="1_eeja2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yd3n0"]
 size = Vector2(352, 32)
 
 [node name="Spikes" type="Node2D" unique_id=1430056494]
+z_index = -5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1368188637]
 position = Vector2(208, 0)
 shape = SubResource("RectangleShape2D_yd3n0")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1401766382]
-modulate = Color(0.7799299, 0.02721226, 9.62615e-08, 1)
-position = Vector2(3.8146973e-06, 0)
-scale = Vector2(2.75, 0.25)
-texture = ExtResource("1_ko705")
+modulate = Color(0.7670882, 0.85130984, 0.85130984, 1)
+position = Vector2(0, -144)
+texture = ExtResource("1_eeja2")

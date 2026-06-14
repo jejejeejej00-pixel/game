@@ -6,7 +6,7 @@ extends Node2D
 
 @export var chunk_folder_path: String = "res://game]/Chunks/"
 @export var render_distance : int = 8 # радиус прорисовки
-@export var start_speed : float = 50
+@export var start_speed : float = 40
 
 var available_chunks: Array[PackedScene] = []
 var last_chunk_y: float = 0
@@ -17,7 +17,11 @@ var current_speed : float = start_speed
 
 func _ready():
 	load_all_chunks()
-	spike_wall.global_position.y = position.y - 8 * tile_size
+	spike_wall.global_position.y = player.position.y - 25 * tile_size
+	
+	await get_tree().create_timer(0.01).timeout
+	player.moving(Vector2.DOWN)
+	
 
 func _process(delta: float) -> void:
 	if is_instance_valid(player):
@@ -31,11 +35,14 @@ func _process(delta: float) -> void:
 				player.is_moving = false
 				player.moving(Vector2.DOWN)
 				
-	current_speed = start_speed + (float(player.score)/1000)
-	spike_wall.global_position.y += current_speed * delta
-	
-	if spike_wall.global_position.y < player.global_position.y - 11 * tile_size:
-		spike_wall.global_position.y = player.global_position.y - 10 * tile_size
+	if is_instance_valid(player):
+		if current_speed < 100:
+			current_speed = player.current_speed / 7.00
+		else: current_speed = 100
+		spike_wall.global_position.y += current_speed * delta
+		
+		if spike_wall.global_position.y < player.global_position.y - 11 * tile_size:
+			spike_wall.global_position.y = player.global_position.y - 10 * tile_size
 
 func load_all_chunks():
 	var dir = DirAccess.open(chunk_folder_path)

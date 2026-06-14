@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://cj7sq18y53nxt"]
+
+[ext_resource type="Texture2D" uid="uid://gfep2x7rdmli" path="res://Untitled 06-06-2026 07-49-52.png" id="1_e271i"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" unique_id=2087887539]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=1701849524]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(96, 96)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer" unique_id=2493350]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer" unique_id=1175943402]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(192, 0)
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxLayer" unique_id=2142250270]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(384, 0)
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxLayer" unique_id=89124413]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(576, 0)
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxLayer" unique_id=1897670385]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(768, 0)
+
+[node name="Sprite2D6" type="Sprite2D" parent="ParallaxLayer" unique_id=735291831]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(0, 192)
+
+[node name="Sprite2D7" type="Sprite2D" parent="ParallaxLayer" unique_id=355149025]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(192, 192)
+
+[node name="Sprite2D8" type="Sprite2D" parent="ParallaxLayer" unique_id=1791821875]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(384, 192)
+
+[node name="Sprite2D9" type="Sprite2D" parent="ParallaxLayer" unique_id=1560514712]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(576, 192)
+
+[node name="Sprite2D10" type="Sprite2D" parent="ParallaxLayer" unique_id=3466962]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(768, 192)
+
+[node name="Sprite2D11" type="Sprite2D" parent="ParallaxLayer" unique_id=431285498]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(0, 384)
+
+[node name="Sprite2D12" type="Sprite2D" parent="ParallaxLayer" unique_id=1392869148]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(192, 384)
+
+[node name="Sprite2D13" type="Sprite2D" parent="ParallaxLayer" unique_id=1744528843]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(384, 384)
+
+[node name="Sprite2D14" type="Sprite2D" parent="ParallaxLayer" unique_id=227843691]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(576, 384)
+
+[node name="Sprite2D15" type="Sprite2D" parent="ParallaxLayer" unique_id=825245916]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(768, 384)
+
+[node name="Sprite2D16" type="Sprite2D" parent="ParallaxLayer" unique_id=217706231]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(0, 576)
+
+[node name="Sprite2D17" type="Sprite2D" parent="ParallaxLayer" unique_id=503625648]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(192, 576)
+
+[node name="Sprite2D18" type="Sprite2D" parent="ParallaxLayer" unique_id=1330219907]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(384, 576)
+
+[node name="Sprite2D19" type="Sprite2D" parent="ParallaxLayer" unique_id=1336665096]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(576, 576)
+
+[node name="Sprite2D20" type="Sprite2D" parent="ParallaxLayer" unique_id=1655573513]
+modulate = Color(0.7001018, 0.7001018, 0.7001018, 1)
+texture = ExtResource("1_e271i")
+offset = Vector2(768, 576)

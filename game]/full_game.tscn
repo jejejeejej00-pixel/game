@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bwl0kxi5dcbve"]
+
+[ext_resource type="Script" uid="uid://8dr0fn52reen" path="res://game]/full_game.gd" id="1_5j26p"]
+[ext_resource type="PackedScene" uid="uid://v52poeso73vr" path="res://game]/game/game1.tscn" id="2_5j26p"]
+[ext_resource type="Texture2D" uid="uid://doplogui33ypy" path="res://чернблок.png" id="2_vxv8b"]
+[ext_resource type="PackedScene" uid="uid://dk33kkl6wi8ii" path="res://game]/ui/control.tscn" id="3_vxv8b"]
+
+[node name="FullGame" type="Node2D" unique_id=1341613499]
+script = ExtResource("1_5j26p")
+node_scene = ExtResource("2_5j26p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1291699678]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=119149271]
+z_index = 50
+position = Vector2(576, 324)
+scale = Vector2(1152, 648)
+texture = ExtResource("2_vxv8b")
+
+[node name="Control" parent="CanvasLayer" unique_id=1721925702 instance=ExtResource("3_vxv8b")]

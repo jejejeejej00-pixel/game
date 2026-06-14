@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dk33kkl6wi8ii"]
+
+[ext_resource type="Script" uid="uid://barvsxv0cgim4" path="res://game]/ui/control.gd" id="1_2m7rd"]
+[ext_resource type="Texture2D" uid="uid://doplogui33ypy" path="res://чернблок.png" id="2_d5yvx"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2m7rd"]
+load_path = "res://.godot/imported/старт  (1).png-c2276f4bfcd8332062171b321923dfb7.ctex"
+
+[node name="Control" type="Control" unique_id=1721925702]
+z_index = 15
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2m7rd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2065865285]
+scale = Vector2(1152, 648)
+texture = ExtResource("2_d5yvx")
+centered = false
+
+[node name="Button" type="Button" parent="." unique_id=684830546]
+z_index = 20
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_constants/icon_max_width = 228
+icon = SubResource("CompressedTexture2D_2m7rd")
+flat = true
+icon_alignment = 1
+expand_icon = true

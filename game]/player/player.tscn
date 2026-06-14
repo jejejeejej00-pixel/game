@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bqsb7g1crekut"]
 
 [ext_resource type="Script" uid="uid://b1jd06ixcfh1s" path="res://game]/player/player.gd" id="1_2jgu7"]
-[ext_resource type="Texture2D" uid="uid://bq238x8ice735" path="res://лодка версия 1 (1).png" id="2_li3fw"]
+[ext_resource type="Texture2D" uid="uid://2vjnkyiiby4r" path="res://лодка версия 1 (2).png" id="2_li3fw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jgu7"]
 size = Vector2(32, 32)

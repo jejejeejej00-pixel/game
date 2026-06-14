@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var player = $"../CharacterBody2D"
+@onready var fullGame = $"../.."
 
 var constant = 3
 
@@ -10,8 +11,9 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if constant != player.health:
-		change_health()
+	if is_instance_valid(player):
+		if constant != player.health:
+			change_health()
 		
 func change_health():
 	if player.health < 3:
@@ -24,6 +26,13 @@ func change_health():
 	
 	if player.health < 1:
 		$Container/heart1.visible = false
+		player.queue_free()
+		fullGame.game_menu()
 	else: $Container/heart1.visible = true
 	
+	if player.health > 3:
+		player.health = 3
+	
 	constant = player.health
+	
+	print("здоровье: ", player.health)
