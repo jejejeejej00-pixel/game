@@ -18,6 +18,7 @@ var score: int = 0
 
 @onready var sprite = $Sprite2D
 @onready var map = $".."
+@onready var fullGame = $"../.."
 
 func _ready() -> void:
 	position = player_pos * tile_size
@@ -61,15 +62,16 @@ func print_score():
 	print(current_speed,' ', score)
 	print($"..".current_speed)
 	await get_tree().create_timer(5).timeout
-	print_score()
+	# print_score()
 
 func _process(delta: float) -> void:
 	sprite.rotation = lerp_angle(sprite.rotation, target_angle, 20 * delta)
 	sprite.position = Vector2(16,16)
+	if position.y > score:
+		score = round(player_pos[1])
 	
-	score = round(player_pos[1])
-	if base_speed * (1 + float(score)/100) < 700.0:
-		current_speed = base_speed * (1 + float(score)/100.0)
+	if base_speed * (1 + float(score)/1000) < 700.0:
+		current_speed = base_speed * (1 + float(score)/1000.0)
 	else:
 		current_speed = 700.0
 	
@@ -110,6 +112,8 @@ func take_damage(amount):
 	
 	health -= amount
 	is_invincible = true
+	if fullGame.sf:
+		$"../damage".play()
 	
 	sprite.modulate = Color.RED
 	await get_tree().create_timer(0.15).timeout
@@ -123,6 +127,8 @@ func take_damage(amount):
 func heal(amount):
 	
 	health += amount
+	if fullGame.sf:
+		$"../heal".play()
 	
 	sprite.modulate = Color.GREEN
 	await get_tree().create_timer(0.15).timeout

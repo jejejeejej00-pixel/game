@@ -1,5 +1,8 @@
 extends Node2D
 
+const bomb = preload("res://game]/mech/bomb.tscn")
+const heal = preload("res://game]/mech/heal.tscn")
+
 @onready var map = $"."
 @onready var player = $CharacterBody2D
 @onready var spike_wall = $Spikes
@@ -34,15 +37,16 @@ func _process(delta: float) -> void:
 				player.dir.y = 1
 				player.is_moving = false
 				player.moving(Vector2.DOWN)
-				
-	if is_instance_valid(player):
+		
 		if current_speed < 100:
-			current_speed = player.current_speed / 7.00
+			current_speed = player.current_speed / 8.00
 		else: current_speed = 100
 		spike_wall.global_position.y += current_speed * delta
 		
 		if spike_wall.global_position.y < player.global_position.y - 11 * tile_size:
 			spike_wall.global_position.y = player.global_position.y - 10 * tile_size
+		if $"..".score < player.score:
+			$"..".score = player.score
 
 func load_all_chunks():
 	var dir = DirAccess.open(chunk_folder_path)
@@ -77,3 +81,14 @@ func set_chunk_on_map(chunk_instance):
 		var global_pos: Vector2i = cell + offset
 		
 		map.set_cell(global_pos, original_id, atlas_coords)
+		
+		if original_id == 2:
+			var heal_box = heal.instantiate()
+			heal_box.position = global_pos * 32
+			add_child(heal_box)
+			
+		if original_id == 3:
+			var bomb_one = bomb.instantiate()
+			bomb_one.position = global_pos * 32
+			add_child(bomb_one)
+			

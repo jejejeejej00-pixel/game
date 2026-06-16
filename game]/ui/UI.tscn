@@ -2,27 +2,180 @@
 
 [ext_resource type="Script" uid="uid://d04vfswx12l1j" path="res://game]/ui/health.gd" id="1_yfuye"]
 [ext_resource type="Texture2D" uid="uid://cird735pliffq" path="res://сердечко (1).png" id="2_guqp5"]
+[ext_resource type="Texture2D" uid="uid://doplogui33ypy" path="res://чернблок.png" id="3_guqp5"]
+[ext_resource type="Texture2D" uid="uid://ge51tgtdheg" path="res://пауза.png" id="4_nxjqn"]
+[ext_resource type="Texture2D" uid="uid://djk6psgurpmgt" path="res://126886.png" id="5_8y3vv"]
+[ext_resource type="Script" uid="uid://bquemyaq4r1va" path="res://game]/ui/menu.gd" id="5_edalh"]
+[ext_resource type="Texture2D" uid="uid://dx1rg0oso4jvw" path="res://2541606.png" id="6_edalh"]
+[ext_resource type="Texture2D" uid="uid://ite1jkyrh0pt" path="res://1286853.png" id="7_gvo8p"]
+[ext_resource type="Texture2D" uid="uid://db7rryxl65jaj" path="res://159.png" id="8_rr28v"]
+[ext_resource type="AudioStream" uid="uid://dt7y23w1oqtlt" path="res://paparazzodrone-rington-malibu-2021-16568.mp3" id="10_gvo8p"]
 
 [node name="ui" type="CanvasLayer" unique_id=483647418]
+process_mode = 3
+scale = Vector2(0.667, 0.667)
+transform = Transform2D(0.667, 0, 0, 0.667, 0, 0)
 script = ExtResource("1_yfuye")
 
 [node name="Container" type="Control" parent="." unique_id=1265559999]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="heart1" type="Sprite2D" parent="Container" unique_id=1419905086]
+process_mode = 3
+z_index = 10
 position = Vector2(75, 75)
 scale = Vector2(3, 3)
 texture = ExtResource("2_guqp5")
 
 [node name="heart2" type="Sprite2D" parent="Container" unique_id=643557506]
+process_mode = 3
+z_index = 10
 position = Vector2(75, 175)
 scale = Vector2(3, 3)
 texture = ExtResource("2_guqp5")
 
 [node name="heart3" type="Sprite2D" parent="Container" unique_id=430576713]
+process_mode = 3
+z_index = 10
 position = Vector2(75, 275)
 scale = Vector2(3, 3)
 texture = ExtResource("2_guqp5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Container" unique_id=2076905261]
+process_mode = 3
+z_index = -2
+position = Vector2(100, 324)
+scale = Vector2(200, 648)
+texture = ExtResource("3_guqp5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Container" unique_id=1832945000]
+process_mode = 3
+z_index = 5
+position = Vector2(1052, 324)
+scale = Vector2(200, 648)
+texture = ExtResource("3_guqp5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Container" unique_id=1821648719]
+process_mode = 3
+layout_mode = 0
+offset_left = 326.0
+offset_right = 826.0
+offset_bottom = 100.0
+theme_override_font_sizes/normal_font_size = 50
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Container" unique_id=816212718]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 868.0
+offset_top = -15.0
+offset_right = 908.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+toggle_mode = true
+icon = ExtResource("4_nxjqn")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="menu" type="Control" parent="Container" unique_id=1837940908]
+process_mode = 3
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_edalh")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Container/menu" unique_id=945750217]
+process_mode = 3
+modulate = Color(1, 1, 1, 0.29803923)
+z_index = 20
+position = Vector2(576, 324)
+scale = Vector2(384, 432)
+texture = ExtResource("3_guqp5")
+
+[node name="Button" type="Button" parent="Container/menu" unique_id=283760284]
+process_mode = 3
+modulate = Color(2.4921954, 2.4921954, 2.4921954, 1)
+layout_mode = 0
+offset_left = 446.0
+offset_top = 230.0
+offset_right = 966.0
+offset_bottom = 750.0
+scale = Vector2(0.2, 0.2)
+theme_override_constants/icon_max_width = 400
+icon = ExtResource("5_8y3vv")
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="Container/menu" unique_id=1659500005]
+process_mode = 3
+modulate = Color(2.492, 2.492, 2.492, 1)
+layout_mode = 0
+offset_left = 601.0
+offset_top = 230.0
+offset_right = 1121.0
+offset_bottom = 750.0
+scale = Vector2(0.2, 0.2)
+theme_override_constants/icon_max_width = 400
+icon = ExtResource("6_edalh")
+icon_alignment = 1
+
+[node name="Button3" type="Button" parent="Container/menu" unique_id=735725853]
+process_mode = 3
+modulate = Color(2.7356017, 1.354462, 1.1751302, 1)
+layout_mode = 0
+offset_left = 446.0
+offset_top = 385.0
+offset_right = 966.0
+offset_bottom = 905.0
+scale = Vector2(0.5, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/menu/Button3" unique_id=2104686080]
+process_mode = 3
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(260, 260)
+scale = Vector2(0.3, 0.8)
+texture = ExtResource("7_gvo8p")
+
+[node name="Button4" type="Button" parent="Container/menu" unique_id=1254682118]
+process_mode = 3
+modulate = Color(1.6095817, 1.6095817, 1.6095817, 0.6313726)
+layout_mode = 0
+offset_left = 655.0
+offset_top = 140.0
+offset_right = 705.0
+offset_bottom = 190.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/menu/Button4" unique_id=1799714338]
+process_mode = 3
+position = Vector2(25, 25)
+rotation = -1.5707964
+scale = Vector2(0.12, 0.15)
+texture = ExtResource("8_rr28v")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=935891257]
+process_mode = 3
+stream = ExtResource("10_gvo8p")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
+[connection signal="pressed" from="Container/menu/Button" to="Container/menu" method="_on_button_pressed"]
+[connection signal="pressed" from="Container/menu/Button2" to="Container/menu" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Container/menu/Button3" to="Container/menu" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Container/menu/Button4" to="Container/menu" method="_on_button_4_pressed"]

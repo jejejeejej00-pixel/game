@@ -9,6 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if area.overlaps_body(player):
-		player.heal(1)
-		queue_free()
+	if is_instance_valid(player):
+		if area.overlaps_body(player):
+			player.heal(1)
+			queue_free()

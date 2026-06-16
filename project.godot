@@ -15,9 +15,21 @@ run/main_scene="uid://bwl0kxi5dcbve"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://d3c1xqkjdu03g"
+
+[autoload]
+
+YandexSDK="*uid://d1bthq2mru8h7"
+
 [display]
 
-window/stretch/scale=1.44
+window/stretch/scale=1.5
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/yandex_games_sdk/plugin.cfg")
 
 [physics]
 

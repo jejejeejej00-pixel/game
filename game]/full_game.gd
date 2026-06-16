@@ -7,7 +7,13 @@ extends Node2D
 @export var node_scene : PackedScene
 var active_node: Node
 
+var music = true
+var sf = true
+
+var score : int = 0
+
 func _ready() -> void:
+	await YandexSDK.init()
 	fade_in()
 
 func fade_in():
@@ -37,4 +43,5 @@ func game_menu():
 	active_node.queue_free()
 	await get_tree().create_timer(0.5).timeout
 	control.able_button()
+	YandexSDK.adv.show_fullscreen()
 	fade_in()
