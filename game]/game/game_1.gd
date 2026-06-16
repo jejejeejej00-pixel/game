@@ -7,7 +7,23 @@ const heal = preload("res://game]/mech/heal.tscn")
 @onready var player = $CharacterBody2D
 @onready var spike_wall = $Spikes
 
-@export var chunk_folder_path: String = "res://game]/Chunks/"
+@export var chunk_folder_path: Array[String] = [
+	"res://game]/Chunks/chunk1(2).tscn", 
+	"res://game]/Chunks/chunk1(3).tscn", 
+	"res://game]/Chunks/chunk1.tscn", 
+	"res://game]/Chunks/chunk2.tscn", 
+	"res://game]/Chunks/chunk3(2).tscn", 
+	"res://game]/Chunks/chunk3.tscn", 
+	"res://game]/Chunks/chunk4(2).tscn", 
+	"res://game]/Chunks/chunk4.tscn", 
+	"res://game]/Chunks/chunk5.tscn", 
+	"res://game]/Chunks/chunk6.tscn", 
+	"res://game]/Chunks/chunk7.tscn", 
+	"res://game]/Chunks/chunk8.tscn", 
+	"res://game]/Chunks/chunk9.tscn", 
+	"res://game]/Chunks/chunk10(2).tscn", 
+	"res://game]/Chunks/chunk10.tscn"
+]
 @export var render_distance : int = 8 # радиус прорисовки
 @export var start_speed : float = 40
 
@@ -49,18 +65,12 @@ func _process(delta: float) -> void:
 			$"..".score = player.score
 
 func load_all_chunks():
-	var dir = DirAccess.open(chunk_folder_path)
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if file_name.ends_with(".tscn"):
-				var chunk_scene = load(chunk_folder_path + file_name)
-				available_chunks.append(chunk_scene)
-			file_name = dir.get_next()
+	for x in chunk_folder_path:
+		var chunk_scene = load(x)
+		available_chunks.append(chunk_scene)
+		
 
 func spawn_random_chunk():
-
 	var random_scene = available_chunks.pick_random()
 	var chunk_instance: TileMapLayer = random_scene.instantiate()
 	
@@ -69,7 +79,7 @@ func spawn_random_chunk():
 	
 	for x in range(0, 12):
 		for y in range(0, 10):
-			map.erase_cell(Vector2i(x , last_chunk_y - render_distance * 5 - y))
+			map.erase_cell(Vector2i(x , round(last_chunk_y - render_distance * 5 - y)))
 	
 func set_chunk_on_map(chunk_instance):
 	var used_cells: Array[Vector2i] = chunk_instance.get_used_cells()

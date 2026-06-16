@@ -23,7 +23,7 @@ var score: int = 0
 func _ready() -> void:
 	position = player_pos * tile_size
 	final_cell = player_pos
-	print_score()
+	# print_score()
 	
 
 func rotato():
@@ -62,7 +62,7 @@ func print_score():
 	print(current_speed,' ', score)
 	print($"..".current_speed)
 	await get_tree().create_timer(5).timeout
-	# print_score()
+	print_score()
 
 func _process(delta: float) -> void:
 	sprite.rotation = lerp_angle(sprite.rotation, target_angle, 20 * delta)

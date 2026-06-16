@@ -12,7 +12,7 @@ func _ready() -> void:
 	$AudioStreamPlayer.playing = fullGame.music
 	k = fullGame.sf
 
-func _process(delta: float) -> void:
+func _process(_delta) -> void:
 	fullGame.sf = k
 	fullGame.music = $AudioStreamPlayer.playing
 	if is_instance_valid(player):
@@ -49,6 +49,6 @@ func change_health():
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
-		print("Игра свернута или вкладка неактивна!")
+		# print("Игра свернута или вкладка неактивна!")
 		$Container/menu.show()
 		get_tree().paused = true

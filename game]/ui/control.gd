@@ -7,9 +7,9 @@ func _ready() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta) -> void:
 	if button.button_pressed:
-		print("привет")
+		# print("привет")
 		button.disabled = true
 		fullGame.start_game_round()
 	
